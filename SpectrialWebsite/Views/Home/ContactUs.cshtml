@@ -1,0 +1,72 @@
+﻿@using SpectrialWebsite.Models
+@{
+    ViewBag.Title = "Contact Us";
+}
+@model LoginViewModel
+
+<div>
+    <img id="image-dna" src="/Content/Images/testImage.png" />
+</div>
+<div class="container body-content">
+
+    <h2>@ViewBag.Title.</h2>
+
+    <div class="col-md-8">
+        <address>
+            Sofia<br />
+            Mini Complex Bulgaria; block 3; app.7a<br />
+            <abbr title="Phone">P:</abbr>
+            425.555.0100
+        </address>
+
+        <address>
+            <strong>Support:</strong>   <a href="mailto:office@example.com">office@example.com</a><br />
+            <strong>Info:</strong> <a href="mailto:info@example.com">info@example.com</a>
+        </address>
+    </div>
+    <div class="col-md-4">
+        @using (@Html.BeginForm())
+        {
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <div>
+                        @Html.LabelFor(vm => vm.FirstName)
+                    </div>
+                    @Html.EditorFor(vm => vm.FirstName, new { @class = "form-control" })
+
+                    <div>
+                        @Html.ValidationMessageFor(vm => vm.FirstName, null, new { @class = "text-danger" })
+                    </div>
+                </div><div class="form-group">
+                    <div>
+                        @Html.LabelFor(vm => vm.LastName)
+                    </div>
+                    @Html.EditorFor(vm => vm.LastName, new { @class = "form-control" })
+                    <div>
+                        @Html.ValidationMessageFor(vm => vm.LastName, null, new { @class = "text-danger" })
+                    </div>
+                </div><div class="form-group">
+                    <div>
+                        @Html.LabelFor(vm => vm.Email)
+                    </div>
+                    @Html.EditorFor(vm => vm.Email, new { @class = "form-control", type = "email" })  <div>
+                        @Html.ValidationMessageFor(vm => vm.Email, null, new { @class = "text-danger" })
+                    </div>
+                </div><div class="form-group">
+                    <div>
+                        @Html.LabelFor(vm => vm.Content)
+                    </div>
+                    @Html.TextAreaFor(vm => vm.Content, new { @class = "form-control" })           <div>
+                        @Html.ValidationMessageFor(vm => vm.Content, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <input type="submit" value="Send" class="btn btn-info" />
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

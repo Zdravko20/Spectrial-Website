@@ -1,0 +1,66 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    overflow-x: hidden;
+    font-size: 17px;
+}
+
+/* Set padding to keep content from hitting the edges*/ 
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.navbar-brand {
+    position: absolute;
+
+}
+
+#navigation { 
+    font-size: 20px;
+}
+
+#image-dna{
+  width: 100%; 
+  display:block; 
+  height: auto;
+}
+
+.img-round {
+    margin-right: 20px;
+    margin-top: 15px;
+    float: left;
+}
+
+#grad {
+    padding: 30px;
+    background: #21909b; 
+    background: -webkit-linear-gradient(#21909b, #63fdc8); 
+    background: -o-linear-gradient(#21909b, #63fdc8); 
+    background: -moz-linear-gradient(#21909b, #63fdc8);
+    background: linear-gradient(#21909b, #63fdc8); 
+}
+
+#advantageHeader {
+    margin-bottom: 40px;
+    margin-left: 50px;
+}
+
+.btn {
+    background-color: #21909b
+}
+
