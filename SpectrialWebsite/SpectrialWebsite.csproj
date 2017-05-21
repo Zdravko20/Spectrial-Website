@@ -135,8 +135,11 @@
     <Content Include="Content\Images\eye.png" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\new-logo.png" />
+    <Content Include="Content\Images\ShutterEye.png" />
     <Content Include="Content\Images\simple-logo.png" />
     <Content Include="Content\Images\spectrial-logo.png" />
+    <Content Include="Content\Images\stock-photo-businessman-selecting-consulting-420471610.jpg" />
+    <Content Include="Content\Images\stock-photo-consulting-concept-man-selecting-and-pressing-consulting-334937294.jpg" />
     <Content Include="Content\Images\test-tube.png" />
     <Content Include="Content\Images\testImage.png" />
     <Content Include="Content\Images\trial-process.png" />
