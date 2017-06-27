@@ -133,6 +133,7 @@
     <Content Include="Content\Images\HomePageImg.png" />
     <Content Include="Content\Images\spectrial_banner_consulting.png" />
     <Content Include="Content\Images\spectrial_banner_service.png" />
+    <Content Include="Content\Images\testContact.png" />
     <Content Include="Content\Images\TestHomePage.png" />
     <Content Include="Content\Images\consulting-eye.png" />
     <Content Include="Content\Images\expertise-eye.png" />
