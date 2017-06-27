@@ -34,7 +34,11 @@
     <hr />
     <div class="container">
         <footer>
-            <p>&copy; @DateTime.Now.Year - Spectrial Ltd</p>
+            <div class="row">
+                <div style="text-align:left;" class="col-md-6">&copy; @DateTime.Now.Year - Spectrial Ltd</div>
+                <div style="text-align: right;   border-right:1px solid;" class="col-md-5">@Html.ActionLink("Privacy policy", "Privacy", "Home")</div> 
+                <div style="text-align: left;" class="col-md-1">@Html.ActionLink("Security", "Security", "Home")</div>
+            </div>
         </footer>
     </div>
 

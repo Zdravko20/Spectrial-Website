@@ -13,23 +13,27 @@
         }
 
         public ActionResult WhoAreWe()
-        {
-            ViewBag.Message = "Your expertise page.";
-
+        {                                                
             return View();
         }
 
         public ActionResult Consulting()
-        {
-            ViewBag.Message = "Your consulting page.";
-
+        {                                                
             return View();
         }
 
         public ActionResult ContactUs()
-        {
-            ViewBag.Message = "Your contact page.";
+        {                                            
+            return View();
+        }
 
+        public ActionResult Privacy()
+        {                                            
+            return View();
+        }
+
+        public ActionResult Security()
+        {                                   
             return View();
         }
 

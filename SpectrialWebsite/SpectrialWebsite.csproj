@@ -130,6 +130,8 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\HomePageImg.png" />
+    <Content Include="Content\Images\TestHomePage.png" />
     <Content Include="Content\Images\consulting-eye.png" />
     <Content Include="Content\Images\expertise-eye.png" />
     <Content Include="Content\Images\eye.png" />
@@ -179,6 +181,8 @@
     <Content Include="Views\Home\ContactUs.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Consulting.cshtml" />
+    <Content Include="Views\Home\Privacy.cshtml" />
+    <Content Include="Views\Home\Security.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
