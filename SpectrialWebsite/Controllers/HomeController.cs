@@ -1,4 +1,8 @@
-﻿namespace SpectrialWebsite.Controllers
+﻿using System.Configuration;
+using System.Net;
+using System.Net.Configuration;
+
+namespace SpectrialWebsite.Controllers
 {
     using System;
     using System.Net.Mail;
@@ -39,42 +43,37 @@
         }
 
         [HttpPost]
-        public ActionResult ContactUs([Bind(Include = "FirstName,LastName,Email,Content")]LoginViewModel loginViewModel)
+        public ActionResult ContactUs(
+            [Bind(Include = "FirstName,LastName,Email,Content")] LoginViewModel loginViewModel)
         {
             if (!this.ModelState.IsValid)
             {
                 return this.View(loginViewModel);
             }
 
-            using (SmtpClient smtpClient = new SmtpClient())
+            var section = (SmtpSection)ConfigurationManager.GetSection("MyMailSettings/smtp");
+            using (SmtpClient client = new SmtpClient(section.Network.Host))
             {
+                client.Port = section.Network.Port;
+                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                client.UseDefaultCredentials = false;
+                System.Net.NetworkCredential credentials =
+                    new System.Net.NetworkCredential(section.Network.UserName, section.Network.Password);
+                client.EnableSsl = section.Network.EnableSsl;
+                client.Credentials = credentials;
+
                 try
                 {
-                    //Configuring webMail class to send emails  
-                    //gmail smtp server  
-                    WebMail.SmtpServer = "smtp.gmail.com";
-                    //gmail port to send emails  
-                    WebMail.SmtpPort = 587;
-                    WebMail.SmtpUseDefaultCredentials = true;
-                    //sending emails with secure protocol  
-                    WebMail.EnableSsl = true;
-                    //EmailId used to send emails from application  
-                    WebMail.UserName = "buckzful@gmail.com";
-                    WebMail.Password = "JOHNYBRAVO941216";
-
-                    //Sender email address.  
-                    WebMail.From = loginViewModel.Email;
-
-                    //Send email  
-                    WebMail.Send(to: "buckzful@gmail.com", subject: "ContactUs", body: loginViewModel.Content, isBodyHtml: true);
-                    ViewBag.Status = "Email Sent Successfully.";
+                    var mail = new MailMessage(section.Network.UserName.Trim(), "buckzful@gmail.com".Trim());
+                    mail.Subject = "Spectrial";
+                    mail.Body = loginViewModel.Content;
+                    client.Send(mail);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    return this.View(loginViewModel);
+                    throw ex;
                 }
             }
-
 
             return this.Redirect("/home");
         }

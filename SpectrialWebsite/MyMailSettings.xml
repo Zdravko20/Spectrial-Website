@@ -1,0 +1,3 @@
+﻿<smtp deliveryMethod="Network" from="spectrial@outlook.com">
+  <network host="smtp-mail.outlook.com" userName="spectrial@outlook.com" password="Zdst23589#" port="587" enableSsl="true" />
+</smtp>
